@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner S=new Scanner(System.in);
+        Main hs=new Main();
+        int n=S.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        arr[i]=S.nextInt();
+        int sum=hs.min_max_sum(arr,n);
+        System.out.print(sum);
+    }
+    int min_max_sum(int A[],int n)
+    {
+        int i,min,max;
+        min=A[0];
+        max=A[0];
+        for(i=1;i<n;i++)
+        {
+            if(min>A[i])
+            min=A[i];
+            if(max<A[i])
+            max=A[i];
+        }
+        return(min+max);
+    }
+}
